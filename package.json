@@ -47,5 +47,6 @@
   },
   "devDependencies": {
     "craco-sass-resources-loader": "^1.1.0"
-  }
+  },
+  "homepage": "stop-motion-maker"
 }
