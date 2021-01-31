@@ -1,0 +1,19 @@
+.button {
+    @apply inline-block font-light rounded-2xl py-1.5 px-5 cursor-pointer;
+
+    &--primary {
+        @apply bg-green-600 text-white;
+    }
+
+    &--secondary {
+        @apply bg-gray-500 text-white;
+    }
+
+    &--danger {
+        @apply bg-red-600 text-white;
+    }
+
+    &--disabled {
+        @apply bg-opacity-25 pointer-events-none cursor-default;
+    }
+}
