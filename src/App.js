@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import {SelectedFiles} from "./SelectedFiles";
 import {OutputVideo} from "./OutputVideo";
 import {ConvertProgress} from "./ConvertProgress";
+import {Dots} from "./dots";
 
 const ffmpeg = createFFmpeg({log: true});
 
@@ -60,7 +61,7 @@ function App() {
         ) :
         (
             <p>
-                Loading FFMPEG module, this can take some time...
+                Loading FFMPEG module, this can take some time <Dots maxNumber={3} interval={250}/>
             </p>
         );
 }
