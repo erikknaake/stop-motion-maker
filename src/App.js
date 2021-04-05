@@ -4,7 +4,7 @@ import {SelectedFiles} from "./SelectedFiles";
 import {OutputVideo} from "./OutputVideo";
 import {ConvertProgress} from "./ConvertProgress";
 
-const ffmpeg = createFFmpeg({log: false});
+const ffmpeg = createFFmpeg({log: true});
 
 function App() {
     const [loaded, setLoaded] = useState(false);
@@ -12,6 +12,7 @@ function App() {
     const [videoUrl, setVideoUrl] = useState(null);
     const [converting, setConverting] = useState(false);
     const [progress, setProgress] = useState(null);
+    const [framerate, setFramerate] = useState(1);
     const load = async () => {
         await ffmpeg.load();
         ffmpeg.setProgress(({ratio}) => {
@@ -32,7 +33,7 @@ function App() {
         for (let i = 0; i < imageFiles.length; i++) {
             ffmpeg.FS('writeFile', images[i].name, imageFiles[i]);
         }
-        await ffmpeg.run('-framerate', '1', '-pattern_type', 'glob', '-i', '*.jpg', '-c:v', 'libx264', '-vf', 'scale=1920:1080', 'out.mp4');
+        await ffmpeg.run('-framerate', `${framerate}`, '-pattern_type', 'glob', '-i', '*.jpg', '-c:v', 'libx264', '-vf', 'scale=1920:1080', 'out.mp4');
         const data = ffmpeg.FS('readFile', 'out.mp4');
         const url = URL.createObjectURL(new Blob([data.buffer], {type: 'video/mp4'}));
         setVideoUrl(url);
@@ -42,8 +43,10 @@ function App() {
     return loaded ? (
             <div className="flex flex-col items-center w-full h-full">
                 <div>
+                    <label>Framerate</label>
+                    <input type="number" id="framerate" name="framerate" value={framerate} onChange={(e) => setFramerate(e.target.value)}/>
                     <input multiple={true} type="file" onChange={(e) => setImages(Array.from(e.target.files))}
-                           className="button button--primary"/>
+                           className="button button--primary" accept="image/jpeg"/>
                     <button onClick={convertToStopMotion} disabled={converting}
                             className={"button button--secondary " + (converting ? 'button--disabled' : '')}>Convert
                     </button>
@@ -57,7 +60,7 @@ function App() {
         ) :
         (
             <p>
-                Loading...
+                Loading FFMPEG module, this can take some time...
             </p>
         );
 }
