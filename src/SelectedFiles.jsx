@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const SelectedFiles = ({images}) => (
-    <div>
+    <div className="flex">
         {images.map(image => {
             return (
                 <div key={image.name} className="image-preview">

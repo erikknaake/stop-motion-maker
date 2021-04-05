@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "src/styles/components/_app.scss";
 @import "src/styles/components/_button.scss";
 @import "src/styles/components/_image-preview.scss";
+@import "src/styles/components/_form.scss";
+@import "src/styles/components/_card.scss";
 
+body, html, #root {
+  width: 100%;
+  height: 100%;
+}

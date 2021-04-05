@@ -1,0 +1,20 @@
+.form {
+
+  @apply flex flex-col;
+
+  &__field {
+    @apply flex flex-col mt-1 mb-1;
+  }
+
+  &__input {
+    @apply block outline-none rounded-xl py-1.5 px-3 w-full border border-gray-400;
+  }
+
+  &__input--upload {
+    @apply cursor-pointer absolute block opacity-0 right-0 top-0 h-full w-full;
+  }
+
+  &__label {
+    @apply block mb-1 uppercase font-medium text-sm;
+  }
+}

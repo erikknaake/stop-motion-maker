@@ -1,0 +1,7 @@
+.app {
+  @apply flex flex-col items-center w-full h-full bg-gray-500;
+
+  &__content {
+    @apply w-full h-full p-2;
+  }
+}
