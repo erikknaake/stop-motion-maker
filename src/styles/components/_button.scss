@@ -1,5 +1,5 @@
 .button {
-    @apply inline-block font-light py-1.5 px-5 cursor-pointer;
+    @apply inline-block font-light py-1.5 px-5 cursor-pointer text-left;
 
     &--primary {
         @apply bg-purple-500 hover:bg-purple-900 text-white;

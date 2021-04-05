@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const UploadButton = ({onChange, text}) => {
     return (
         <div className="form__field overflow-hidden relative bg-purple-500 hover:bg-purple-900">

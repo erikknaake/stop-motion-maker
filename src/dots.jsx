@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export const Dots = (props) => {
     const [dots, setDots] = useState('.');
@@ -17,6 +17,6 @@ export const Dots = (props) => {
     });
 
     return (
-        dots
+        <span>{dots}</span>
     );
-};
+}

@@ -1,7 +1,7 @@
+import React from 'react';
 import {ConvertProgress} from "./ConvertProgress";
 import {OutputVideo} from "./OutputVideo";
 import {SelectedFiles} from "./SelectedFiles";
-
 export const Output = ({progress, videoUrl, images}) => {
     return (
         <div className="output">
