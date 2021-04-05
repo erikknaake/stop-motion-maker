@@ -32,15 +32,18 @@ export const useFFMPEG = () => {
             setVideoUrl(url);
             setConverting(false);
         }
-    : async () => {};
+        : async () => {
+        };
     useEffect(() => {
         if (wasmEnabled) {
             (async () => {
-                await ffmpeg.load();
-                ffmpeg.setProgress(({ratio}) => {
-                    setProgress(ratio * 100);
-                });
-                setLoaded(true);
+                if (!ffmpeg.isLoaded()) {
+                    await ffmpeg.load();
+                    ffmpeg.setProgress(({ratio}) => {
+                        setProgress(ratio * 100);
+                    });
+                    setLoaded(true);
+                }
             })();
         } else {
             ffmpeg.onmessage = function (e) {

@@ -1,0 +1,11 @@
+.card {
+  @apply p-4 rounded bg-white w-full h-full;
+
+  &__content {
+    @apply w-full h-full p-2;
+  }
+
+  &__header {
+    @apply text-center text-4xl;
+  }
+}
