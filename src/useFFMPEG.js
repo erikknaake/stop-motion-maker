@@ -7,7 +7,7 @@ if (window.isSecureContext) {
     ffmpeg = createFFmpeg({log: true});
 } else {
     wasmEnabled = false;
-    ffmpeg = new Worker("ffmpeg-worker-webm.js");
+    // TODO
 }
 
 export const useFFMPEG = () => {
@@ -33,6 +33,7 @@ export const useFFMPEG = () => {
             setConverting(false);
         }
         : async () => {
+        // TODO
         };
     useEffect(() => {
         if (wasmEnabled) {
@@ -46,25 +47,7 @@ export const useFFMPEG = () => {
                 }
             })();
         } else {
-            ffmpeg.onmessage = function (e) {
-                const msg = e.data;
-                switch (msg.type) {
-                    case "ready":
-                        ffmpeg.postMessage({type: "run", arguments: ["-version"]});
-                        break;
-                    case "stdout":
-                        console.log(msg.data);
-                        break;
-                    case "stderr":
-                        console.log(msg.data);
-                        break;
-                    case "done":
-                        console.log('Done:', msg.data);
-                        break;
-                    default:
-                        console.log('Default case?', msg);
-                }
-            };
+            // TODO
         }
     }, []);
     return {

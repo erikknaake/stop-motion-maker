@@ -4,10 +4,6 @@ import {useFFMPEG} from "./useFFMPEG";
 import {UploadButton} from "./UploadButton";
 import {Output} from "./Output";
 
-/*
-    {<input multiple={true} type="file" onChange={(e) => setImages(Array.from(e.target.files))}}
-    {className="button button--primary" accept="image/jpeg"/>}
-*/
 function App() {
     const {
         loaded,
