@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/stop-motion-maker/static/css/main.93256cab.chunk.css",
-    "main.js": "/stop-motion-maker/static/js/main.c0770a15.chunk.js",
-    "main.js.map": "/stop-motion-maker/static/js/main.c0770a15.chunk.js.map",
+    "main.css": "/stop-motion-maker/static/css/main.cb1bf41e.chunk.css",
+    "main.js": "/stop-motion-maker/static/js/main.ecce767f.chunk.js",
+    "main.js.map": "/stop-motion-maker/static/js/main.ecce767f.chunk.js.map",
     "runtime-main.js": "/stop-motion-maker/static/js/runtime-main.022034f4.js",
     "runtime-main.js.map": "/stop-motion-maker/static/js/runtime-main.022034f4.js.map",
-    "static/js/2.04f09e4a.chunk.js": "/stop-motion-maker/static/js/2.04f09e4a.chunk.js",
-    "static/js/2.04f09e4a.chunk.js.map": "/stop-motion-maker/static/js/2.04f09e4a.chunk.js.map",
+    "static/js/2.2ed4bc95.chunk.js": "/stop-motion-maker/static/js/2.2ed4bc95.chunk.js",
+    "static/js/2.2ed4bc95.chunk.js.map": "/stop-motion-maker/static/js/2.2ed4bc95.chunk.js.map",
     "static/js/3.2f1f72ba.chunk.js": "/stop-motion-maker/static/js/3.2f1f72ba.chunk.js",
     "static/js/3.2f1f72ba.chunk.js.map": "/stop-motion-maker/static/js/3.2f1f72ba.chunk.js.map",
     "index.html": "/stop-motion-maker/index.html",
-    "static/css/main.93256cab.chunk.css.map": "/stop-motion-maker/static/css/main.93256cab.chunk.css.map",
-    "static/js/2.04f09e4a.chunk.js.LICENSE.txt": "/stop-motion-maker/static/js/2.04f09e4a.chunk.js.LICENSE.txt"
+    "static/css/main.cb1bf41e.chunk.css.map": "/stop-motion-maker/static/css/main.cb1bf41e.chunk.css.map",
+    "static/js/2.2ed4bc95.chunk.js.LICENSE.txt": "/stop-motion-maker/static/js/2.2ed4bc95.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.022034f4.js",
-    "static/js/2.04f09e4a.chunk.js",
-    "static/css/main.93256cab.chunk.css",
-    "static/js/main.c0770a15.chunk.js"
+    "static/js/2.2ed4bc95.chunk.js",
+    "static/css/main.cb1bf41e.chunk.css",
+    "static/js/main.ecce767f.chunk.js"
   ]
 }
