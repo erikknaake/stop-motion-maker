@@ -1,45 +1,22 @@
-import {createFFmpeg, fetchFile} from "@ffmpeg/ffmpeg";
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {SelectedFiles} from "./SelectedFiles";
 import {OutputVideo} from "./OutputVideo";
 import {ConvertProgress} from "./ConvertProgress";
 import {Dots} from "./dots";
-
-const ffmpeg = createFFmpeg({log: true});
+import {useFFMPEG} from "./useFFMPEG";
 
 function App() {
-    const [loaded, setLoaded] = useState(false);
-    const [images, setImages] = useState([]);
-    const [videoUrl, setVideoUrl] = useState(null);
-    const [converting, setConverting] = useState(false);
-    const [progress, setProgress] = useState(null);
-    const [framerate, setFramerate] = useState(1);
-    const load = async () => {
-        await ffmpeg.load();
-        ffmpeg.setProgress(({ratio}) => {
-            setProgress(ratio * 100);
-        });
-        setLoaded(true);
-    }
-
-    useEffect(() => {
-        load();
-    }, []);
-
-    const convertToStopMotion = async () => {
-        setConverting(true);
-
-        const filePromises = images.map(image => fetchFile(image));
-        const imageFiles = await Promise.all(filePromises);
-        for (let i = 0; i < imageFiles.length; i++) {
-            ffmpeg.FS('writeFile', images[i].name, imageFiles[i]);
-        }
-        await ffmpeg.run('-framerate', `${framerate}`, '-pattern_type', 'glob', '-i', '*.jpg', '-c:v', 'libx264', '-vf', 'scale=1920:1080', 'out.mp4');
-        const data = ffmpeg.FS('readFile', 'out.mp4');
-        const url = URL.createObjectURL(new Blob([data.buffer], {type: 'video/mp4'}));
-        setVideoUrl(url);
-        setConverting(false);
-    }
+    const {
+        loaded,
+        framerate,
+        setFramerate,
+        images,
+        setImages,
+        converting,
+        convertToStopMotion,
+        progress,
+        videoUrl,
+    } = useFFMPEG();
 
     return loaded ? (
             <div className="flex flex-col items-center w-full h-full">
