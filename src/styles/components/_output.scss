@@ -1,3 +1,5 @@
 .output {
-
+  &__video {
+    @apply max-h-96 max-w-7xl;
+  }
 }

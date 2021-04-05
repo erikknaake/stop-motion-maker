@@ -1,7 +1,4 @@
 import React from "react";
-import {SelectedFiles} from "./SelectedFiles";
-import {OutputVideo} from "./OutputVideo";
-import {ConvertProgress} from "./ConvertProgress";
 import {Dots} from "./dots";
 import {useFFMPEG} from "./useFFMPEG";
 import {UploadButton} from "./UploadButton";
@@ -56,7 +53,7 @@ function App() {
                     SharedArrayBuffer</a>
                 </p>
                 <p>
-                    Loading FFMPEG module, this can take some time <Dots maxNumber={3} interval={250}/>
+                    Loading FFMPEG module, this can take some time<Dots maxNumber={3} interval={250}/>
                 </p>
             </div>
         );
