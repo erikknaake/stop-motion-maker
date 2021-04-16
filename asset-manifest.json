@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/stop-motion-maker/static/css/main.cb1bf41e.chunk.css",
-    "main.js": "/stop-motion-maker/static/js/main.ecce767f.chunk.js",
-    "main.js.map": "/stop-motion-maker/static/js/main.ecce767f.chunk.js.map",
+    "main.js": "/stop-motion-maker/static/js/main.2ad1e80b.chunk.js",
+    "main.js.map": "/stop-motion-maker/static/js/main.2ad1e80b.chunk.js.map",
     "runtime-main.js": "/stop-motion-maker/static/js/runtime-main.022034f4.js",
     "runtime-main.js.map": "/stop-motion-maker/static/js/runtime-main.022034f4.js.map",
     "static/js/2.2ed4bc95.chunk.js": "/stop-motion-maker/static/js/2.2ed4bc95.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.022034f4.js",
     "static/js/2.2ed4bc95.chunk.js",
     "static/css/main.cb1bf41e.chunk.css",
-    "static/js/main.ecce767f.chunk.js"
+    "static/js/main.2ad1e80b.chunk.js"
   ]
 }
